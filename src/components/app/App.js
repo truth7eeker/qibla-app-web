@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import "./App.css";
 import Compass from "../compass/Compass";
-import { isIOS, deviceDetector } from "../../helpers/detectDevice";
+import { isIOS } from "../../helpers/detectDevice";
 import { handleMessage } from "../../helpers/outputMessage";
 import Portrait from "../portrait-mode/Portrait";
 import { detectOrientation } from "../../helpers/detectOrientation";
@@ -65,16 +65,6 @@ function App() {
     }
     setStart(true);
   };
-
-  useEffect(() => {
-    // redirect desktop to another webpage
-    if (
-      deviceDetector.device == "desktop" ||
-      deviceDetector.device == "tablet"
-    ) {
-      window.location.assign("https://www.elahmad.com/maps/qiblamobile.php");
-    }
-  }, []);
 
   return (
     <div className="app">
